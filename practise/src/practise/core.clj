@@ -1,7 +1,16 @@
 (ns practise.core
   (:gen-class))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn big?
+  [st n]
+  (> (count st) n))
+
+(defn collection-type
+  [col]
+  (cond
+    (vector? col) :vector
+    (list? col) :list
+    (map? col) :map
+    :else :unknown-type))
+
+
